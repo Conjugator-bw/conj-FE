@@ -27,6 +27,12 @@ const Verbo = (props) => {
     const [perf, setPerf] = useState("")
     const [mood, setMood] = useState("")
 
+    const [input, setInput] = useState("")
+
+    const [count, setCount] = useState(0)
+    const [highScore, setHighScore] = useState(0)
+    const [correctAnswer, setCorrectAnswer] = useState(false)
+
 
     useEffect(() => {
         
@@ -45,29 +51,82 @@ const Verbo = (props) => {
                     setDef(makeArr.translation);
                     setPerf(makeArr.performer);
                     setMood(makeArr.mood);
-                    console.log(makeArr, "found it")
+                    setCorrectAnswer(false);
+                    
                 })
                 .catch(error => {
                     console.log('error')
                 })
-            }, [])
+            }, [correctAnswer])
 
-            // console.log("hello", inf)
+            console.log(conj)
            
+
+            const changeHandler = evt => {
+                setInput(evt.target.value)
+            }
+
+            const handleSubmit = evt => {
+                evt.preventDefault();
+                if (conj === input) {
+                    alert("Felicidades, correcto")
+                    resetInputField();
+                    setCount(count + 1)
+                    setCorrectAnswer(true)
+                    
+                } else {
+                    alert("please try again")
+                    resetInputField();
+                    setCount(0)
+                }
+
+            }
+
+            // count > highScore ? setHighScore(count) : null
+
+            const resetInputField = () => {
+                setInput("")
+            }
+
+            // const refreshPage = () => { 
+            //     window.location.reload(); 
+            // }
+
       
      
         return (
             <div>
                <p>"something here"</p>
-               {/* <p>{console.log(makeArr)}</p> */}
                <p>Infinitive: {inf}</p>
                <p>Conjugation: {conj.conj}</p>
                <p>Definition: {def}</p>
                <p>Tense: {tense}</p>
                <p>Performer: {perf}</p>
                <p>Mood: {mood}</p> 
-            
+                <div className="conjugator-form">
+                    <form onSubmit={handleSubmit}>
+                        <input
+                            id="input"
+                            name="input"
+                            type="text"
+                            value={input}
+                            onChange= {changeHandler}
+                            placeholder="answer here..."
+                        />
+                        <button className="conjugator-button" type="submit">Submit</button>
+
+                    </form>
+                </div>
+                <div>
+                    count: {count}
+                    <br />
+                    {count > highScore ? setHighScore(count) : null }
+                    <p>Your new high score is {highScore}!</p>
+                </div>
             </div>
         )
-        }
+    }
+
+
+
  export default Verbo;

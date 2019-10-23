@@ -1,26 +1,47 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
+
+
 import Verbo from './components/verbo/verbo.js'
+import SignUp from './components/sign-up/sign-up.js'
+import Login from './components/login/login.js'
+import PrivateRoute from './components/private-route/privateRoute.js'
+
 const App = () => {
-   const [ verbs, setVerbs ] = useState([]);
-   useEffect(() => {
-       const getVerbs =() => {
-           axios
-               .get('https://raw.githubusercontent.com/ghidinelli/fred-jehle-spanish-verbs/master/jehle_verb_lookup.json')
-               .then(response => {
-                   console.log(response)
-               })
-               .catch(error => {
-                   console.log('error')
-               })
-       }
-       getVerbs();
-       }, []);
-       return (
+    
+    
+    
+    
+    
+    
+    
+    return (
+        <Router>
            <div>
                <p>something goes here</p>
+                <ul>
+                    <li>
+                        <Link to="/login">Login</Link>
+                    </li>
+                    <li>
+                        <Link to="/sign-up">Sign Up</Link>
+                    </li>
+
+
+                </ul>
+
               <Verbo />
+
            </div>
+
+           <Switch>
+               <PrivateRoute exact path="/protected" component={Verbo} />
+               <Route path="/sign-up" component={SignUp} />
+               <Route path="/login" component={Login} />
+               <Route component={Login} />
+           </Switch>
+        </Router>
        )
 }
 export default App;
