@@ -1,6 +1,8 @@
 import React from 'react';
+import LoginModal from "../modal/loginmodal.js";
 
-import { axiosWithAuth } from '../authentication/axiosWithAuth.js'
+
+import { axiosWithAuth } from '../authentication/axiosWithAuth.js';
 
 class Login extends React.Component {
     state = {

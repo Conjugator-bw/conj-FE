@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import styled from 'styled-components';
 
 
 
@@ -9,6 +10,18 @@ import axios from 'axios';
 //       addAccent,
 //       setValue,
 //     } = props;
+
+const Verbos = styled.div`
+    display: flex;
+    background-color: #e5e3ff;
+    flex-direction: column;
+    align-itmes: center;
+    color: #6459ff;
+    font-weight: bold;
+    font-size: 20px;
+
+
+`
 
 
 
@@ -95,7 +108,7 @@ const Verbo = (props) => {
       
      
         return (
-            <div>
+            <Verbos>
                <p>"something here"</p>
                <p>Infinitive: {inf}</p>
                <p>Conjugation: {conj.conj}</p>
@@ -123,7 +136,7 @@ const Verbo = (props) => {
                     {count > highScore ? setHighScore(count) : null }
                     <p>Your new high score is {highScore}!</p>
                 </div>
-            </div>
+            </Verbos>
         )
     }
 
