@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Verbo from './components/Verbo'
 
 class App extends Component {
     state = {
@@ -9,7 +10,7 @@ class App extends Component {
     render() {
         return (
             <div>
-               <p>{this.state.something}</p> 
+               <Verbo />
             </div>
         )
     }
