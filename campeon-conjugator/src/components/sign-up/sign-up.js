@@ -24,10 +24,10 @@ class SignUp extends React.Component {
         e.preventDefault()
 
         axiosWithAuth()
-            .post('/api/auth/register')
+            .post('/api/auth/register', this.state.credentials)
             .then(res => {
                 localStorage.setItem('token', res.data.payload);
-                this.props.history.push('./login');
+                // this.props.history.push('./login');
                 console.log("did it work?")
             
             })

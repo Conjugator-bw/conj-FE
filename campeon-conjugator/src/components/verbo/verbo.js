@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import styled from 'styled-components';
 
+import Accent from "./accent";
+
 
 
 // function Verbo (props) {
@@ -13,12 +15,19 @@ import styled from 'styled-components';
 
 const Verbos = styled.div`
     display: flex;
+    box-sizing: border-box;
     background-color: #e5e3ff;
     flex-direction: column;
-    align-itmes: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     color: #6459ff;
     font-weight: bold;
     font-size: 20px;
+    border-color: purple;
+    border: 5px;
+    border-radius: 2px;
+
 
 
 `
@@ -95,6 +104,12 @@ const Verbo = (props) => {
 
             }
 
+            const addAccentLetter = event => {
+                event.preventDefault();
+                const accentLetter = event.target.value;
+                setInput(input + accentLetter);
+            }
+
             // count > highScore ? setHighScore(count) : null
 
             const resetInputField = () => {
@@ -109,7 +124,7 @@ const Verbo = (props) => {
      
         return (
             <Verbos>
-               <p>"something here"</p>
+               {/* <p>"something here"</p> */}
                <p>Infinitive: {inf}</p>
                <p>Conjugation: {conj.conj}</p>
                <p>Definition: {def}</p>
@@ -130,6 +145,11 @@ const Verbo = (props) => {
 
                     </form>
                 </div>
+                <div>
+                    <Accent addAccentLetter={addAccentLetter} />
+                </div>
+
+                
                 <div>
                     count: {count}
                     <br />

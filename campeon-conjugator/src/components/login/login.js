@@ -1,8 +1,19 @@
 import React from 'react';
 import LoginModal from "../modal/loginmodal.js";
-
+import styled from "styled-components";
 
 import { axiosWithAuth } from '../authentication/axiosWithAuth.js';
+
+const LoginStyles = styled.div`
+    display: flex;
+    width: 500px;
+    height: 400px;
+    background-color: e5e3ff;
+
+
+
+
+`
 
 class Login extends React.Component {
     state = {
@@ -21,13 +32,14 @@ class Login extends React.Component {
         })
     }
 
-    login = e => {
+   login = e => {
         e.preventDefault()
 
         axiosWithAuth()
-            .post('/api/auth/login')
+            .post('/api/auth/login', this.state.credentials)
             .then(res => {
-                localStorage.setItem('token', res.data.payload);
+                localStorage.setItem('token', res.data.token);
+                console.log(res.data.token)
                 this.props.history.push('./protected');
                 console.log("did it work?")
             
@@ -38,9 +50,11 @@ class Login extends React.Component {
 
     render() {
         return (
+            
             <div>
+                
                 <form onSubmit={this.login}> 
-                    
+                <LoginStyles>
                     <input
                         type="text"
                         name="username"
@@ -57,10 +71,11 @@ class Login extends React.Component {
                     />
                 
                     <button>Sign In</button>
+                    </LoginStyles>
                 </form>   
-
+                
             </div>
-
+            
         )
     }
 }
