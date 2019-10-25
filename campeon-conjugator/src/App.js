@@ -2,45 +2,43 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
 
+import Footer from './components/verbo/footer';
+import Navbar from './components/navbar.js';
+import Verbo from './components/verbo/verbo.js';
+import SignUp from './components/sign-up/sign-up.js';
+import Login from './components/login/login.js';
+import PrivateRoute from './components/private-route/privateRoute.js';
+import LoginModal from "./components/modal/loginmodal.js";
+import useModal from "./components/modal/useModal.js";
+import styled from 'styled-components';
 
-import Verbo from './components/verbo/verbo.js'
-import SignUp from './components/sign-up/sign-up.js'
-import Login from './components/login/login.js'
-import PrivateRoute from './components/private-route/privateRoute.js'
+
+
+
 
 const App = () => {
     
     
-    
-    
-    
-    
-    
     return (
         <Router>
+            
            <div>
-               <p>something goes here</p>
-                <ul>
-                    <li>
-                        <Link to="/login">Login</Link>
-                    </li>
-                    <li>
-                        <Link to="/sign-up">Sign Up</Link>
-                    </li>
+                <Navbar />
 
+                <Verbo />
 
-                </ul>
-
-              <Verbo />
+                
 
            </div>
 
            <Switch>
                <PrivateRoute exact path="/protected" component={Verbo} />
-               <Route path="/sign-up" component={SignUp} />
-               <Route path="/login" component={Login} />
-               <Route component={Login} />
+               <Route exact path="/" component={Verbo}/>
+               {/* <Route path="/sign-up" component={SignUp} />
+               <Route path="/login" component={Login} /> */}
+               {/* <Route component={Login} /> */}
            </Switch>
+           <Footer />
         </Router>
        )
 }
