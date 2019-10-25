@@ -10,7 +10,12 @@ const Verbo = (props) => {
         return Math.floor(Math.random()*Math.floor(max));
     }
 
-    // const [ verbs, setVerbs ] = useState([]);
+    const [ verbs, setVerbs ] = useState({
+        
+    });
+
+
+
     const [inf, setInf] = useState("")
     const [conj, setConj] = useState({conj: ""})
     const [def, setDef] = useState("")
