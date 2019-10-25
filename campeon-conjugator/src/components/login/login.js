@@ -5,10 +5,26 @@ import styled from "styled-components";
 import { axiosWithAuth } from '../authentication/axiosWithAuth.js';
 
 const LoginStyles = styled.div`
-    display: flex;
-    width: 500px;
+    
     height: 400px;
-    background-color: e5e3ff;
+    
+    display: flex;
+    box-sizing: border-box;
+    background-color: #e5e3ff;
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #6459ff;
+    font-weight: bold;
+    font-size: 20px;
+    border: 5px solid purple;
+    border-radius: 10px;
+    box-shadow: 10px 10px 10px #999;
+    width: 500px;
+    font-family: comic-sans;
+    font-weight: bold;
+    
 
 
 
@@ -52,9 +68,9 @@ class Login extends React.Component {
         return (
             
             <div>
-                
-                <form onSubmit={this.login}> 
                 <LoginStyles>
+                <form onSubmit={this.login}> 
+                
                     <input
                         type="text"
                         name="username"
@@ -69,11 +85,11 @@ class Login extends React.Component {
                         onChange={this.handleChange}
                         placeholder="Password"
                     />
-                
+                   
                     <button>Sign In</button>
-                    </LoginStyles>
+                    
                 </form>   
-                
+                </LoginStyles> 
             </div>
             
         )

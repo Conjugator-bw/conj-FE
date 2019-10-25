@@ -6,12 +6,12 @@ import Accent from "./accent";
 
 
 
-// function Verbo (props) {
-//     const {
-//       value,
-//       addAccent,
-//       setValue,
-//     } = props;
+
+const VerboBox = styled.div`
+        display: flex;
+        flex-direction: flex-end;
+        justify-content: space-evenly;
+`
 
 const Verbos = styled.div`
     display: flex;
@@ -24,13 +24,41 @@ const Verbos = styled.div`
     color: #6459ff;
     font-weight: bold;
     font-size: 20px;
-    border-color: purple;
-    border: 5px;
-    border-radius: 2px;
+    border: 5px solid purple;
+    border-radius: 10px;
+    box-shadow: 10px 10px 10px #999;
+    width: 500px;
+    font-family: Varela Round;
+    font-weight: bold;
+    padding:20px;
+    margin-top: 20px;
 
+    .conjugator-button {
+        background-color: #8077ff;
+        border-radius: 10px;
+        height: 55px;
+        width:100px;
+        box-shadow: 7px 10px 10px #999;
+       
+    }
 
+    .input-style {
+        border-radius: 10px;
+        height: 50px;
+        width:50%;
+        margin:10px;
+        box-shadow: 7px 10px 10px #999;
+        text-align: center;
+        font-family: Varela Round;
+        
+    }
+
+    .count-styling {
+        margin-top: 15px;
+    }
 
 `
+
 
 
 
@@ -104,59 +132,76 @@ const Verbo = (props) => {
 
             }
 
-            const addAccentLetter = event => {
-                event.preventDefault();
-                const accentLetter = event.target.value;
+            const addAccentLetter = e => {
+                const accentLetter = e.target.value;
                 setInput(input + accentLetter);
             }
 
-            // count > highScore ? setHighScore(count) : null
 
             const resetInputField = () => {
                 setInput("")
             }
 
-            // const refreshPage = () => { 
-            //     window.location.reload(); 
-            // }
+
 
       
      
         return (
-            <Verbos>
-               {/* <p>"something here"</p> */}
-               <p>Infinitive: {inf}</p>
-               <p>Conjugation: {conj.conj}</p>
-               <p>Definition: {def}</p>
-               <p>Tense: {tense}</p>
-               <p>Performer: {perf}</p>
-               <p>Mood: {mood}</p> 
-                <div className="conjugator-form">
-                    <form onSubmit={handleSubmit}>
-                        <input
-                            id="input"
-                            name="input"
-                            type="text"
-                            value={input}
-                            onChange= {changeHandler}
-                            placeholder="answer here..."
-                        />
-                        <button className="conjugator-button" type="submit">Submit</button>
+        
+        <div>
+            <div>
+            <VerboBox>
+                <Verbos>
+                    {/* <p>"something here"</p> */}
+                    <p>Infinitive: {inf}</p>
+                    <p>Definition: {def}</p>
+                    <p>Tense: {tense}</p>
+                    <p>Performer: {perf}</p>
+                    <p>Mood: {mood}</p> 
+                        <div className="conjugator-form">
+                            <form onSubmit={handleSubmit}>
+                                <input
+                                    class="input-style"
+                                    id="input"
+                                    name="input"
+                                    type="text"
+                                    value={input}
+                                    onChange= {changeHandler}
+                                    placeholder="answer here..."
+                                />
+                                <button className="conjugator-button" type="submit">Submit</button>
 
-                    </form>
-                </div>
-                <div>
-                    <Accent addAccentLetter={addAccentLetter} />
-                </div>
+                            </form>
+                        </div>
+                        <div>
+                            <Accent addAccentLetter={addAccentLetter} />
+                        </div>
 
+                        
+                        <div class="count-styling">
+                            count: {count}
+                            <br />
+                            {count > highScore ? setHighScore(count) : null }
+                            <p>Your new high score is {highScore}!</p>
+                        </div>
                 
-                <div>
-                    count: {count}
-                    <br />
-                    {count > highScore ? setHighScore(count) : null }
-                    <p>Your new high score is {highScore}!</p>
-                </div>
-            </Verbos>
+                
+                
+                </Verbos>
+                    
+                    
+                    <Verbos>
+                        <div>
+                            <p>Think you're</p>
+                           <p> a Spanish expert?</p>
+                            <p>Try Conjugator
+                            and find out!</p>
+                        </div>
+                    </Verbos>
+                </VerboBox> 
+            </div>  
+        </div>
+             
         )
     }
 

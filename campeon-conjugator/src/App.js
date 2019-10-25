@@ -12,7 +12,9 @@ import LoginModal from "./components/modal/loginmodal.js";
 import useModal from "./components/modal/useModal.js";
 import styled from 'styled-components';
 
-
+const BodyStyle = styled.div`
+    background-color: #e5e3ff;
+`
 
 
 
@@ -21,11 +23,11 @@ const App = () => {
     
     return (
         <Router>
-            
+            <BodyStyle>
            <div>
                 <Navbar />
 
-                <Verbo />
+                {/* <Verbo /> */}
 
                 
 
@@ -33,12 +35,13 @@ const App = () => {
 
            <Switch>
                <PrivateRoute exact path="/protected" component={Verbo} />
-               <Route exact path="/" component={Verbo}/>
+               <Route path="/" component={Verbo}/>
                {/* <Route path="/sign-up" component={SignUp} />
                <Route path="/login" component={Login} /> */}
                {/* <Route component={Login} /> */}
            </Switch>
            <Footer />
+           </BodyStyle>
         </Router>
        )
 }

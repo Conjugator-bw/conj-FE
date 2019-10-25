@@ -1,15 +1,10 @@
 import React from 'react';
-import styled from 'styled-components';
-const AccentWrapper = styled.div`
-   display: flex;
-   .accent-button {
-       font-size: 20px;
-       padding: 10px;
-   }
-`
+import {AccentStyling} from './accentStyling'
+
+
 const Accent = props => {
    return (
-       <AccentWrapper>
+       <AccentStyling>
            <button class="accent-button" onClick={props.addAccentLetter} value="á">
                á
            </button>
@@ -31,7 +26,7 @@ const Accent = props => {
            <button class="accent-button" onClick={props.addAccentLetter} value="ü">
                ü
            </button>
-       </AccentWrapper>
+       </AccentStyling>
    )
 }
 export default Accent;
