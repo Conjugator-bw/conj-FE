@@ -154,8 +154,7 @@ const Verbo = (props) => {
      
         return (
         
-        <div>
-            <div>
+        
             <VerboBox>
                 <Verbos>
                     {/* <p>"something here"</p> */}
@@ -205,8 +204,7 @@ const Verbo = (props) => {
                         </div>
                     </Verbos>
                 </VerboBox> 
-            </div>  
-        </div>
+        
              
         )
     }

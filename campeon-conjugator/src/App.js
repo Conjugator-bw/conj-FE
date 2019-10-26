@@ -26,16 +26,14 @@ const App = () => {
     return (
         <Router>
             <BodyStyle>
-           <div>
-                <Navbar />
-                {/* <Verbo /> */}
-           </div>
+            <Navbar />
+
 
            <Switch>
                <PrivateRoute exact path="/protected" component={Verbo} />
                <Route exact path="/" component={Verbo}/>
-               s<Route path="/sign-up" component={SignUp} />
-               <Route path="/login" component={Login} /> */}
+               s<Route exact path="/sign-up" component={SignUp} />
+               <Route exact path="/login" component={Login} /> */}
                {/* <Route component={Login} /> */}
            </Switch>
            <Footer />
