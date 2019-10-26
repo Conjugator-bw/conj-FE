@@ -3,64 +3,7 @@ import axios from 'axios';
 import styled from 'styled-components';
 
 import Accent from "./accent";
-
-
-
-
-const Wrapper = styled.div`
-        display: flex;
-        flex-direction: flex-end;
-        justify-content: space-evenly;
-        margin: 0;
-        width: 100%;
-`
-
-const Container = styled.div`
-    display: flex;
-    box-sizing: border-box;
-    background-color: #e5e3ff;
-    flex-direction: column;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #6459ff;
-    font-weight: bold;
-    font-size: 20px;
-    border: 5px solid purple;
-    border-radius: 10px;
-    box-shadow: 10px 10px 10px #999;
-    width: 500px;
-    font-family: Varela Round;
-    font-weight: bold;
-    padding:20px;
-    margin-top: 20px;
-
-    .conjugator-button {
-        background-color: #8077ff;
-        border-radius: 10px;
-        height: 55px;
-        width:100px;
-        box-shadow: 7px 10px 10px #999;
-    }
-
-    .input-style {
-        border-radius: 10px;
-        height: 50px;
-        width:45%;
-        margin:10px;
-        box-shadow: 7px 10px 10px #999;
-        text-align: center;
-        font-family: Varela Round;
-        
-    }
-
-    .count-styling {
-        margin-top: 15px;
-    }
-`
-
-
-
+import {VerboBox, Verbos} from './verboStyling'
 
 const Verbo = (props) => {
     console.log(props)
@@ -165,8 +108,11 @@ const Verbo = (props) => {
                     <p>Tense: {verbs.tense}</p>
                     <p>Performer: {verbs.performer}</p>
                     <p>Mood: {verbs.mood}</p> 
-                        <div className="conjugator-form">
-                            <form onSubmit={handleSubmit}>
+                        <div>
+                            <Accent addAccentLetter={addAccentLetter} />
+                        </div>
+                        <div>
+                            <form className="conjugator-form" onSubmit={handleSubmit}>
                                 <input
                                     className="input-style"
                                     id="input"
@@ -176,17 +122,16 @@ const Verbo = (props) => {
                                     onChange= {changeHandler}
                                     placeholder="answer here..."
                                 />
+ 
                                 <button className="conjugator-button" type="submit">Submit</button>
+                
 
                             </form>
                         </div>
-                        <div>
-                            <Accent addAccentLetter={addAccentLetter} />
-                        </div>
 
                         
-                        <div class="count-styling">
-                            count: {count}
+                        <div className="count-styling">
+                            Count: {count}
                             <br />
                             {count > highScore ? setHighScore(count) : null }
                             <p>Your new high score is {highScore}!</p>

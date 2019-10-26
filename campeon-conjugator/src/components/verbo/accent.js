@@ -5,25 +5,25 @@ import {AccentStyling} from './accentStyling'
 const Accent = props => {
    return (
        <AccentStyling>
-           <button class="accent-button" onClick={props.addAccentLetter} value="á">
+           <button className="accent-button" onClick={props.addAccentLetter} value="á">
                á
            </button>
-           <button class="accent-button" onClick={props.addAccentLetter} value="é">
+           <button className="accent-button" onClick={props.addAccentLetter} value="é">
                é
            </button>
-           <button class="accent-button" onClick={props.addAccentLetter} value="í">
+           <button className="accent-button" onClick={props.addAccentLetter} value="í">
                í
            </button>
-           <button class="accent-button" onClick={props.addAccentLetter} value="ó">
+           <button className="accent-button" onClick={props.addAccentLetter} value="ó">
                ó
            </button>
-           <button class="accent-button" onClick={props.addAccentLetter} value="ú">
+           <button className="accent-button" onClick={props.addAccentLetter} value="ú">
                ú
            </button>
-           <button class="accent-button" onClick={props.addAccentLetter} value="ñ">
+           <button className="accent-button" onClick={props.addAccentLetter} value="ñ">
                ñ
            </button>
-           <button class="accent-button" onClick={props.addAccentLetter} value="ü">
+           <button className="accent-button" onClick={props.addAccentLetter} value="ü">
                ü
            </button>
        </AccentStyling>

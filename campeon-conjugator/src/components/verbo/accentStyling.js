@@ -1,4 +1,3 @@
-import React from "react";
 import styled from 'styled-components';
 
 export const AccentStyling = styled.div`
@@ -8,11 +7,15 @@ export const AccentStyling = styled.div`
         font-size: 16px;
         padding: 5px;
         background-color: #8077ff;
-        border-radius: 2px;
-        height:px;
-        width:%;
-        box-shadow: 7px 10px 10px #999;
         padding 10px;
-
+        border: 0.5px solid #fff;
+        border-top: none;
+        border-bottom: none;
+    }
+    .accent-button:nth-child(1) {
+        border-left: none;
+    }
+    .accent-button:nth-child(7) {
+        border-right: none;
     }
 `
