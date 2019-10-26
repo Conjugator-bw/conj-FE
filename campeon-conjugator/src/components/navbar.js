@@ -44,7 +44,9 @@ const Navbar = () => {
                 hide={toggle}
             />
         </div>
-        <h1>Conjugator</h1>
+        <Link to="/">
+          <h1>Conjugator</h1>
+        </Link>
         <div>
             <Link onClick={toggleSignUp} to='/sign-up'>Sign Up</Link>
             <SignUpModal

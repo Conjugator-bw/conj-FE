@@ -6,11 +6,11 @@ import Navbar from './components/navbar.js';
 import Verbo from './components/verbo/verbo.js';
 import PrivateRoute from './components/private-route/privateRoute.js';
 import styled from 'styled-components';
+import Login from './components/login/login.js';
+import SignUp from './components/sign-up/sign-up.js';
 
 
 
-// import SignUp from './components/sign-up/sign-up.js';
-// import Login from './components/login/login.js';
 // import LoginModal from "./components/modal/loginmodal.js";
 // import useModal from "./components/modal/useModal.js";
 
@@ -33,8 +33,8 @@ const App = () => {
 
            <Switch>
                <PrivateRoute exact path="/protected" component={Verbo} />
-               <Route path="/" component={Verbo}/>
-               {/* <Route path="/sign-up" component={SignUp} />
+               <Route exact path="/" component={Verbo}/>
+               s<Route path="/sign-up" component={SignUp} />
                <Route path="/login" component={Login} /> */}
                {/* <Route component={Login} /> */}
            </Switch>
