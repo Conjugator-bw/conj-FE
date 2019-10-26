@@ -10,7 +10,7 @@ import Login from './components/login/login.js';
 import PrivateRoute from './components/private-route/privateRoute.js';
 import LoginModal from "./components/modal/loginmodal.js";
 import useModal from "./components/modal/useModal.js";
-import styled from 'styled-components';
+// import styled from 'styled-components';
 
 
 

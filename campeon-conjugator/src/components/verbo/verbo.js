@@ -15,7 +15,7 @@ const Verbos = styled.div`
     display: flex;
     background-color: #e5e3ff;
     flex-direction: column;
-    align-itmes: center;
+    align-items: center;
     color: #6459ff;
     font-weight: bold;
     font-size: 20px;
@@ -32,13 +32,14 @@ const Verbo = (props) => {
         return Math.floor(Math.random()*Math.floor(max));
     }
 
-    // const [ verbs, setVerbs ] = useState([]);
-    const [inf, setInf] = useState("")
-    const [conj, setConj] = useState({conj: ""})
-    const [def, setDef] = useState("")
-    const [tense, setTense] = useState("")
-    const [perf, setPerf] = useState("")
-    const [mood, setMood] = useState("")
+    const [ verbs, setVerbs ] = useState({
+        infinitive: '',
+        conjugate: { conj: ''},
+        translation: '',
+        tense: '',
+        performer: '',
+        mood: ''   
+    });
 
     const [input, setInput] = useState("")
 
@@ -47,32 +48,40 @@ const Verbo = (props) => {
     const [correctAnswer, setCorrectAnswer] = useState(false)
 
 
-    useEffect(() => {
-        
-            axios
+    useEffect(  () => {
+        const fetchVerbs = async () => {
+            await axios
                 .get('https://raw.githubusercontent.com/ghidinelli/fred-jehle-spanish-verbs/master/jehle_verb_lookup.json')
                 .then(res => {
                     // console.log(response)
                     const vari = Object.entries(res.data);
                     // console.log(res.data)
                     const obj = vari[getRandom(1000)];
-                    setConj(obj[0]);
-                    const newArr = obj[1];
-                    const makeArr = newArr[0];
-                    setInf(makeArr.infinitive);
-                    setTense(makeArr.tense);
-                    setDef(makeArr.translation);
-                    setPerf(makeArr.performer);
-                    setMood(makeArr.mood);
+                    // setConj(obj[0]);
+                    
+                    const arr = obj[1];
+                    const newArr = arr[0];
+                    
+                    setVerbs({
+                        conjugate: {conj: obj[0]},
+                        infinitive: newArr.infinitive,
+                        tense: newArr.tense,
+                        translation: newArr.translation,
+                        performer: newArr.performer,
+                        mood: newArr.mood
+                    })
+
                     setCorrectAnswer(false);
                     
                 })
                 .catch(error => {
                     console.log('error')
                 })
-            }, [correctAnswer])
+            }
+            fetchVerbs()
+        }, [correctAnswer])
 
-            console.log(conj)
+            console.log(verbs)
            
 
             const changeHandler = evt => {
@@ -81,7 +90,7 @@ const Verbo = (props) => {
 
             const handleSubmit = evt => {
                 evt.preventDefault();
-                if (conj === input) {
+                if (verbs.conjugate === input) {
                     alert("Felicidades, correcto")
                     resetInputField();
                     setCount(count + 1)
@@ -92,30 +101,21 @@ const Verbo = (props) => {
                     resetInputField();
                     setCount(0)
                 }
-
             }
-
-            // count > highScore ? setHighScore(count) : null
 
             const resetInputField = () => {
                 setInput("")
             }
 
-            // const refreshPage = () => { 
-            //     window.location.reload(); 
-            // }
-
-      
-     
         return (
             <Verbos>
                <p>"something here"</p>
-               <p>Infinitive: {inf}</p>
-               <p>Conjugation: {conj.conj}</p>
-               <p>Definition: {def}</p>
-               <p>Tense: {tense}</p>
-               <p>Performer: {perf}</p>
-               <p>Mood: {mood}</p> 
+               <p>Infinitive: {verbs.infinitive}</p>
+               <p>Conjugation: {verbs.conjugate.conj}</p>
+               <p>Definition: {verbs.translation}</p>
+               <p>Tense: {verbs.tense}</p>
+               <p>Performer: {verbs.performer}</p>
+               <p>Mood: {verbs.mood}</p> 
                 <div className="conjugator-form">
                     <form onSubmit={handleSubmit}>
                         <input

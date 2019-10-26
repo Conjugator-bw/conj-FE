@@ -22,10 +22,10 @@ const Footer = () => {
     return (
         <Wrapper>
             <div>
-                <p class='footer-text'>Lambda School - Conjugator 2019 Copyright ©</p>
+                <p className='footer-text'>Lambda School - Conjugator 2019 Copyright ©</p>
             </div>
             <div>
-                <Link class='footer-link' to="/">Home</Link>
+                <Link className='footer-link' to="/">Home</Link>
             </div>
         </Wrapper>    
     )

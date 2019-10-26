@@ -23,7 +23,7 @@ const Wrapper = styled.div`
     text-align: center;
   }
 
-  .link {
+  a {
     font-size: 43px;
     text-decoration: none;
     color: #6459ff;
@@ -38,7 +38,7 @@ const Navbar = () => {
   return (
     <Wrapper>
         <div>
-            <Link onClick={toggle} class='link' to='/login'>Login</Link>
+            <Link onClick={toggle} to='/login'>Login</Link>
             <LoginModal
                 isShowing={isShowing}
                 hide={toggle}
@@ -46,7 +46,7 @@ const Navbar = () => {
         </div>
         <h1>Conjugator</h1>
         <div>
-            <Link onClick={toggleSignUp} class='link' to='/sign-up'>Sign Up</Link>
+            <Link onClick={toggleSignUp} to='/sign-up'>Sign Up</Link>
             <SignUpModal
                 isShowing={isShowingSignUp}
                 hide={toggleSignUp}
