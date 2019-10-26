@@ -32,8 +32,8 @@ const App = () => {
            <Switch>
                <PrivateRoute exact path="/protected" component={Verbo} />
                <Route exact path="/" component={Verbo}/>
-               s<Route exact path="/sign-up" component={SignUp} />
-               <Route exact path="/login" component={Login} /> */}
+               <Route exact path="/sign-up" component={SignUp} />
+               <Route exact path="/login" component={Login} /> 
                {/* <Route component={Login} /> */}
            </Switch>
            <Footer />
