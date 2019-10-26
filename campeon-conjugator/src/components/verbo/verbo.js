@@ -3,7 +3,8 @@ import axios from 'axios';
 
 
 import Accent from "./accent";
-import {Wrapper, Container} from './verboStyling'
+import Graph from "./graph";
+import {Wrapper, Container} from './verboStyling';
 
 const Verbo = (props) => {
     console.log(props)
@@ -41,6 +42,8 @@ const Verbo = (props) => {
                     
                     const arr = obj[1];
                     const newArr = arr[0];
+                    console.log(arr)
+                    console.log(newArr)
                     
                     setVerbs({
                         conjugate: {conj: obj[0]},
@@ -149,8 +152,12 @@ const Verbo = (props) => {
                             <p>Try Conjugator
                             and find out!</p>
                         </div>
+                        <div>
+                            <Graph count={count} highScore={highScore}/>
+                        </div>
                     </Container>
                 </Wrapper> 
+                
         
              
         )
