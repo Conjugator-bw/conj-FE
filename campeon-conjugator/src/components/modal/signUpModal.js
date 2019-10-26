@@ -7,7 +7,7 @@ import SignUp from '../sign-up/sign-up.js';
 const SignUpModal = ({ isShowing, hide }) => isShowing ? ReactDom.createPortal(
     <>
         <div>
-            <button type="button" data-dismiss="modal" aria-label="Close" onClick={hide}>Login</button>
+            <button type="button" data-dismiss="modal" aria-label="Close" onClick={hide}>Close</button>
             <div>
                 <SignUp />
            </div>

@@ -12,7 +12,7 @@ const Wrapper = styled.div`
   display: flex;
   justify-content: space-evenly;
   flex-direction: flex-wrap;
-  background-color: #e5e3ff;
+  // background-color: #e5e3ff;
   font-family: 'SegoeUIEmoji', sans-serif;
   align-items: center;
   color: #6459ff;

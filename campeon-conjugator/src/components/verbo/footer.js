@@ -2,9 +2,10 @@ import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
-const Wrapper = styled.div `
+const Wrapper = styled.div`
     display: flex;
     justify-content: space-evenly;
+    margin-top: 50px;
 
     .footer-link {
         font-size: 16px;
