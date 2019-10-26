@@ -1,45 +1,42 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
 
+import Footer from './components/verbo/footer';
+import Navbar from './components/navbar.js';
+import Verbo from './components/verbo/verbo.js';
+import SignUp from './components/sign-up/sign-up.js';
+import Login from './components/login/login.js';
+import PrivateRoute from './components/private-route/privateRoute.js';
+import LoginModal from "./components/modal/loginmodal.js";
+import useModal from "./components/modal/useModal.js";
+import styled from 'styled-components';
 
-import Verbo from './components/verbo/verbo.js'
-import SignUp from './components/sign-up/sign-up.js'
-import Login from './components/login/login.js'
-import PrivateRoute from './components/private-route/privateRoute.js'
+const BodyStyle = styled.div`
+    background-color: #e5e3ff;
+`
+
+
 
 const App = () => {
     
     
-    
-    
-    
-    
-    
     return (
         <Router>
+            <BodyStyle>
            <div>
-               <p>something goes here</p>
-                <ul>
-                    <li>
-                        <Link to="/login">Login</Link>
-                    </li>
-                    <li>
-                        <Link to="/sign-up">Sign Up</Link>
-                    </li>
-
-
-                </ul>
-
-              <Verbo />
-
+                <Navbar />
+                {/* <Verbo /> */}
            </div>
 
            <Switch>
                <PrivateRoute exact path="/protected" component={Verbo} />
-               <Route path="/sign-up" component={SignUp} />
-               <Route path="/login" component={Login} />
-               <Route component={Login} />
+               <Route path="/" component={Verbo}/>
+               {/* <Route path="/sign-up" component={SignUp} />
+               <Route path="/login" component={Login} /> */}
+               {/* <Route component={Login} /> */}
            </Switch>
+           <Footer />
+           </BodyStyle>
         </Router>
        )
 }
