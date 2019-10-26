@@ -26,11 +26,7 @@ const App = () => {
             <BodyStyle>
            <div>
                 <Navbar />
-
                 {/* <Verbo /> */}
-
-                
-
            </div>
 
            <Switch>

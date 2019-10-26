@@ -39,7 +39,6 @@ const Verbos = styled.div`
         height: 55px;
         width:100px;
         box-shadow: 7px 10px 10px #999;
-       
     }
 
     .input-style {
@@ -56,7 +55,6 @@ const Verbos = styled.div`
     .count-styling {
         margin-top: 15px;
     }
-
 `
 
 
@@ -127,7 +125,7 @@ const Verbo = (props) => {
 
             const handleSubmit = evt => {
                 evt.preventDefault();
-                if (verbs.conjugate === input) {
+                if (verbs.conjugate.conj === input) {
                     alert("Felicidades, correcto")
                     resetInputField();
                     setCount(count + 1)
