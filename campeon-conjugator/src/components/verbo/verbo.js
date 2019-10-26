@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import styled from 'styled-components';
+
 
 import Accent from "./accent";
-import {VerboBox, Verbos} from './verboStyling'
+import {Wrapper, Container} from './verboStyling'
 
 const Verbo = (props) => {
     console.log(props)
