@@ -5,10 +5,6 @@ import styled from 'styled-components';
 import Accent from "./accent";
 import {VerboBox, Verbos} from './verboStyling'
 
-
-
-
-
 const Verbo = (props) => {
     console.log(props)
 
@@ -104,8 +100,8 @@ const Verbo = (props) => {
         return (
         
         
-            <VerboBox>
-                <Verbos>
+            <Wrapper>
+                <Container>
                     {/* <p>"something here"</p> */}
                     <p>Infinitive: {verbs.infinitive}</p>
                     <p>Definition: {verbs.translation}</p>
@@ -143,18 +139,18 @@ const Verbo = (props) => {
                 
                 
                 
-                </Verbos>
+                </Container>
                     
                     
-                    <Verbos>
+                    <Container>
                         <div>
                             <p>Think you're</p>
                            <p> a Spanish expert?</p>
                             <p>Try Conjugator
                             and find out!</p>
                         </div>
-                    </Verbos>
-                </VerboBox> 
+                    </Container>
+                </Wrapper> 
         
              
         )

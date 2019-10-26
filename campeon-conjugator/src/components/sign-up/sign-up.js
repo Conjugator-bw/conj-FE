@@ -3,27 +3,6 @@ import React from 'react';
 import { axiosWithAuth } from '../authentication/axiosWithAuth.js'
 import  styled from "styled-components";
 
-const SignUpStyles = styled.div`
-    
-    height: 80vh;
-    display: flex;
-    flex-direction: column;
-    box-sizing: border-box;
-    background-color: #e5e3ff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #6459ff;
-    font-weight: bold;
-    font-size: 20px;
-    /* border: 5px solid purple; */
-    border-radius: 10px;
-    /* box-shadow: 10px 10px 10px #999; */
-    /* width: 500px; */
-    font-weight: bold;
-
-`
-
 
 const FormContainer = styled.div`
   /* display: flex;
