@@ -9,7 +9,6 @@ import {VerboBox, Verbos} from './verboStyling'
 
 
 
-
 const Verbo = (props) => {
     console.log(props)
 
@@ -136,7 +135,7 @@ const Verbo = (props) => {
 
                         
                         <div className="count-styling">
-                            count: {count}
+                            Count: {count}
                             <br />
                             {count > highScore ? setHighScore(count) : null }
                             <p>Your new high score is {highScore}!</p>

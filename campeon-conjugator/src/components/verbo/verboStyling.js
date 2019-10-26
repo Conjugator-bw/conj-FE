@@ -32,6 +32,12 @@ export const Verbos = styled.div`
         border: none;
         font-family: Varela Round;
         text-transform: uppercase;
+        cursor: pointer;
+    }
+
+    .conjugator-button:hover {
+        text-shadow: 0px 0px 6px rgba(255, 255, 255, 1);
+        transition: all 0.4s ease 0s;
     }
 
     .input-style {
