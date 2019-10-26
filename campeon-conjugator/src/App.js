@@ -10,12 +10,9 @@ import Login from './components/login/login.js';
 import SignUp from './components/sign-up/sign-up.js';
 
 
-
-// import LoginModal from "./components/modal/loginmodal.js";
-// import useModal from "./components/modal/useModal.js";
-
 const BodyStyle = styled.div`
     background-color: #e5e3ff;
+    min-height: 100vh;    
 `
 
 
@@ -24,8 +21,8 @@ const App = () => {
     
     
     return (
-        <Router>
             <BodyStyle>
+        <Router>
             <Navbar />
 
 
@@ -37,8 +34,8 @@ const App = () => {
                {/* <Route component={Login} /> */}
            </Switch>
            <Footer />
-           </BodyStyle>
         </Router>
+           </BodyStyle>
        )
 }
 export default App;

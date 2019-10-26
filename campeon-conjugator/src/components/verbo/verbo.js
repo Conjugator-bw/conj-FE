@@ -7,13 +7,15 @@ import Accent from "./accent";
 
 
 
-const VerboBox = styled.div`
+const Wrapper = styled.div`
         display: flex;
         flex-direction: flex-end;
         justify-content: space-evenly;
+        margin: 0;
+        width: 100%;
 `
 
-const Verbos = styled.div`
+const Container = styled.div`
     display: flex;
     box-sizing: border-box;
     background-color: #e5e3ff;
@@ -155,8 +157,8 @@ const Verbo = (props) => {
         return (
         
         
-            <VerboBox>
-                <Verbos>
+            <Wrapper>
+                <Container>
                     {/* <p>"something here"</p> */}
                     <p>Infinitive: {verbs.infinitive}</p>
                     <p>Definition: {verbs.translation}</p>
@@ -192,18 +194,18 @@ const Verbo = (props) => {
                 
                 
                 
-                </Verbos>
+                </Container>
                     
                     
-                    <Verbos>
+                    <Container>
                         <div>
                             <p>Think you're</p>
                            <p> a Spanish expert?</p>
                             <p>Try Conjugator
                             and find out!</p>
                         </div>
-                    </Verbos>
-                </VerboBox> 
+                    </Container>
+                </Wrapper> 
         
              
         )
