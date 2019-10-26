@@ -44,7 +44,7 @@ const Verbos = styled.div`
     .input-style {
         border-radius: 10px;
         height: 50px;
-        width:50%;
+        width:45%;
         margin:10px;
         box-shadow: 7px 10px 10px #999;
         text-align: center;

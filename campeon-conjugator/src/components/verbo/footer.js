@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 const Wrapper = styled.div`
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
     margin-top: 50px;
 
     .footer-link {
@@ -26,7 +26,7 @@ const Footer = () => {
                 <p className='footer-text'>Lambda School - Conjugator 2019 Copyright ©</p>
             </div>
             <div>
-                <Link className='footer-link' to="/">Home</Link>
+                {/* <Link className='footer-link' to="/">Home</Link> */}
             </div>
         </Wrapper>    
     )
