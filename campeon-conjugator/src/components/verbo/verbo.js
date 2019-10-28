@@ -101,7 +101,6 @@ const Verbo = (props) => {
         
             <Wrapper>
                 <Container>
-                    {/* <p>"something here"</p> */}
                     <p>Infinitive: {verbs.infinitive}</p>
                     <p>Definition: {verbs.translation}</p>
                     <p>Tense: {verbs.tense}</p>
@@ -144,7 +143,7 @@ const Verbo = (props) => {
                     <Container>
                         <div>
                             <p>Think you're</p>
-                           <p> a Spanish expert?</p>
+                            <p> a Spanish expert?</p>
                             <p>Try Conjugator
                             and find out!</p>
                         </div>

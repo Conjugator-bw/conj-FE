@@ -10,6 +10,8 @@ import { Link } from 'react-router-dom';
 
 const Wrapper = styled.div`
   display: flex;
+  width: 100%;
+  height: 6.25rem;
   justify-content: space-evenly;
   flex-direction: flex-wrap;
   background-color: #e5e3ff;
@@ -27,6 +29,15 @@ const Wrapper = styled.div`
     font-size: 43px;
     text-decoration: none;
     color: #6459ff;
+
+  }
+  @media (max-width: 765px) {
+    h1 {
+      font-size: 1.4rem;
+    }
+    a {
+      font-size: 1rem;
+    }
   }
 `
 
