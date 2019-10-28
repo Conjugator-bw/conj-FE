@@ -1,11 +1,11 @@
 import styled from 'styled-components';
 
-export const VerboBox = styled.div`
+export const Wrapper = styled.div`
     display: flex;
     flex-direction: flex-end;
     justify-content: space-evenly;
 `
-export const Verbos = styled.div`
+export const Container = styled.div`
     display: flex;
     box-sizing: border-box;
     background-color: #e5e3ff;
