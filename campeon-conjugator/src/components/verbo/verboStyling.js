@@ -67,6 +67,7 @@ export const Container = styled.div`
 
     .count-styling {
         margin-top: 15px;
+        display: none;
     }
 
     .conjugator-form {
@@ -81,3 +82,4 @@ export const Container = styled.div`
         overflow-wrap: break-word;
     }
 `
+

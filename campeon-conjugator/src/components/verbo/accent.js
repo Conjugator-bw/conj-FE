@@ -2,6 +2,8 @@ import React from 'react';
 import {AccentStyling} from './accentStyling'
 
 
+
+
 const Accent = props => {
    return (
        <AccentStyling>
