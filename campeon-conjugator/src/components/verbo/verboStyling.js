@@ -2,12 +2,23 @@ import styled from 'styled-components';
 
 export const Wrapper = styled.div`
     display: flex;
+    width: 100%;
     flex-direction: flex-end;
     justify-content: space-evenly;
+
+    @media (max-width: 1115px) {
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+        text-align: center;
+
+        p {
+            font-size: 1.2rem;
+        }
+    }
 `
 export const Container = styled.div`
     display: flex;
-    /* text-align: center; */
     box-sizing: border-box;
     background-color: #e5e3ff;
     flex-direction: column;
@@ -20,11 +31,13 @@ export const Container = styled.div`
     border: 5px solid purple;
     border-radius: 10px;
     box-shadow: 10px 10px 10px #999;
-    width: 500px;
     font-family: Varela Round;
     font-weight: bold;
     padding:20px;
     margin-top: 20px;
+    width: 35%;
+
+    
 
     .conjugator-button {
         background-color: #8077ff;
@@ -60,5 +73,11 @@ export const Container = styled.div`
         display: flex;
         flex-direction: column;
         justify-content: center;
+    }
+
+    @media (max-width: 1115px) {
+        width: 92%;
+        padding: 5px;
+        overflow-wrap: break-word;
     }
 `

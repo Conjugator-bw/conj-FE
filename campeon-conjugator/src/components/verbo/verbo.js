@@ -138,17 +138,16 @@ const Verbo = (props) => {
                 
                 
                 </Container>
-                    
-                    
-                    <Container>
-                        <div>
-                            <p>Think you're</p>
-                            <p> a Spanish expert?</p>
-                            <p>Try Conjugator
-                            and find out!</p>
-                        </div>
-                    </Container>
-                </Wrapper> 
+                        
+                <Container>
+                    <div>
+                        <p>Think you're</p>
+                        <p> a Spanish expert?</p>
+                        <p>Try Conjugator
+                        and find out!</p>
+                    </div>
+                </Container>
+            </Wrapper> 
         
              
         )
