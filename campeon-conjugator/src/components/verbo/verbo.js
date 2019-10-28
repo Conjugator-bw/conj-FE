@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import styled from 'styled-components';
 
 import Accent from "./accent";
 import {Wrapper, Container} from './verboStyling'
@@ -28,9 +27,9 @@ const Verbo = (props) => {
     const [correctAnswer, setCorrectAnswer] = useState(false)
 
 
-    useEffect(  () => {
+    useEffect( () => {
         const fetchVerbs = async () => {
-            await axios
+             await axios
                 .get('https://raw.githubusercontent.com/ghidinelli/fred-jehle-spanish-verbs/master/jehle_verb_lookup.json')
                 .then(res => {
                     // console.log(response)
@@ -131,7 +130,7 @@ const Verbo = (props) => {
 
                         
                         <div className="count-styling">
-                            Count: {count}
+                            Current Score: {count}
                             <br />
                             {count > highScore ? setHighScore(count) : null }
                             <p>Your new high score is {highScore}!</p>
