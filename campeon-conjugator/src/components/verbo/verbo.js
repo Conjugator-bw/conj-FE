@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-
-
 import Accent from "./accent";
 import Graph from "./graph";
 import {Wrapper, Container} from './verboStyling';
@@ -31,9 +29,9 @@ const Verbo = (props) => {
     const [beginner, setBeginner] = useState(false);
 
 
-    useEffect(  () => {
+    useEffect( () => {
         const fetchVerbs = async () => {
-            await axios
+             await axios
                 .get('https://raw.githubusercontent.com/ghidinelli/fred-jehle-spanish-verbs/master/jehle_verb_lookup.json')
                 .then(res => {
                     // console.log(response)
@@ -130,7 +128,6 @@ const Verbo = (props) => {
         
             <Wrapper>
                 <Container>
-                    {/* <p>"something here"</p> */}
                     <p>Infinitive: {verbs.infinitive}</p>
                     <p>Definition: {verbs.translation}</p>
                     <p>Tense: {verbs.tense}</p>
@@ -172,7 +169,7 @@ const Verbo = (props) => {
 
                         
                         <div className="count-styling">
-                            Count: {count}
+                            Current Score: {count}
                             <br />
                             {count > highScore ? setHighScore(count) : null }
                             <p>Your new high score is {highScore}!</p>
@@ -181,24 +178,19 @@ const Verbo = (props) => {
                 
                 
                 </Container>
-                    
-                    
-                    <Container>
-                        <div>
-                            <p>Think you're</p>
-                           <p> a Spanish expert?</p>
-                            <p>Try Conjugator
-                            and find out!</p>
-                        </div>
-                        <div>
-                            <Graph count={count} highScore={highScore}/>
-                        </div>
-                        
-                    </Container>
-                </Wrapper> 
-                
-        
-             
+                <Container>
+                    <div>
+                        <p>Think you're</p>
+                       <p> a Spanish expert?</p>
+                        <p>Try Conjugator
+                        and find out!</p>
+                    </div>
+                    <div>
+                        <Graph count={count} highScore={highScore}/>
+                    </div>
+
+                </Container>
+            </Wrapper> 
         )
     }
 
