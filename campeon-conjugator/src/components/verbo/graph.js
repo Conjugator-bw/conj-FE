@@ -29,9 +29,11 @@ const Graph = props => {
         });
         
         
-        }, [props.count])
+        }, [props.count, props.highScore])
 
         console.log(countData)
+
+        console.log(countData.data)
 
 
         return(

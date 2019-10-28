@@ -16,7 +16,7 @@ const Wrapper = styled.div`
   font-family: 'SegoeUIEmoji', sans-serif;
   align-items: center;
   color: #6459ff;
-  box-shadow: 10px 10px 10px #999;
+  box-shadow: 4px 4px 4px #999;
   
   h1 {
     font-size: 53px;

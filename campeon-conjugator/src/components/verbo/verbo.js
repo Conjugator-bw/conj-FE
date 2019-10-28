@@ -28,6 +28,8 @@ const Verbo = (props) => {
     const [highScore, setHighScore] = useState(0)
     const [correctAnswer, setCorrectAnswer] = useState(false)
 
+    const [beginner, setBeginner] = useState(false);
+
 
     useEffect(  () => {
         const fetchVerbs = async () => {
@@ -39,20 +41,38 @@ const Verbo = (props) => {
                     // console.log(res.data)
                     const obj = vari[getRandom(1000)];
                     // setConj(obj[0]);
+                    const beginnerVari = vari.filter(item => item[1][0].mood === "Indicative")
+                    const beginnerObj = beginnerVari[getRandom(1000)];
+
+
+                    const beginnerArr = beginnerObj[1]
+                    const beginnerNewArr = beginnerArr[0]
                     
                     const arr = obj[1];
                     const newArr = arr[0];
-                    console.log(arr)
-                    console.log(newArr)
+
+
+                    if (beginner == true) {
+                        setVerbs({
+                            conjugate: {conj: beginnerObj[0]},
+                            infinitive: beginnerNewArr.infinitive,
+                            tense: beginnerNewArr.tense,
+                            translation: beginnerNewArr.translation,
+                            performer: beginnerNewArr.performer,
+                            mood: beginnerNewArr.mood
+                        })
+                    } else {
+                        setVerbs({
+                            conjugate: {conj: obj[0]},
+                            infinitive: newArr.infinitive,
+                            tense: newArr.tense,
+                            translation: newArr.translation,
+                            performer: newArr.performer,
+                            mood: newArr.mood
+                        })
+                    }
                     
-                    setVerbs({
-                        conjugate: {conj: obj[0]},
-                        infinitive: newArr.infinitive,
-                        tense: newArr.tense,
-                        translation: newArr.translation,
-                        performer: newArr.performer,
-                        mood: newArr.mood
-                    })
+                    
 
                     setCorrectAnswer(false);
                     
@@ -62,9 +82,14 @@ const Verbo = (props) => {
                 })
             }
             fetchVerbs()
-        }, [correctAnswer])
+        }, [correctAnswer, beginner])
 
             console.log(verbs)
+
+            const checkChangeHandler = evt => {
+                let checked = evt.target.checked;
+                setBeginner(checked)
+            }
            
 
             const changeHandler = evt => {
@@ -74,13 +99,13 @@ const Verbo = (props) => {
             const handleSubmit = evt => {
                 evt.preventDefault();
                 if (verbs.conjugate.conj === input) {
-                    alert("Felicidades, correcto")
+                    alert("Felicidades, cierto")
                     resetInputField();
                     setCount(count + 1)
                     setCorrectAnswer(true)
                     
                 } else {
-                    alert("please try again")
+                    alert("Please try again")
                     resetInputField();
                     setCount(0)
                 }
@@ -131,6 +156,19 @@ const Verbo = (props) => {
 
                             </form>
                         </div>
+                        <br />
+                        <form>
+                            <label>
+                                Beginner:
+                                <input
+                                    name="easyLevel"
+                                    type="checkbox"
+                                    checked={beginner}
+                                    onChange={checkChangeHandler}
+                                >
+                                </input>
+                            </label>
+                        </form>
 
                         
                         <div className="count-styling">
@@ -155,6 +193,7 @@ const Verbo = (props) => {
                         <div>
                             <Graph count={count} highScore={highScore}/>
                         </div>
+                        
                     </Container>
                 </Wrapper> 
                 
