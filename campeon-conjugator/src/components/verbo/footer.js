@@ -3,12 +3,7 @@ import styled from 'styled-components';
 
 const Wrapper = styled.div`
     display: flex;
-<<<<<<< HEAD
-    justify-content: space-evenly;
-    align-items: center;
-=======
     justify-content: center;
->>>>>>> master
     margin-top: 50px;
     height: 120px;
 
