@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled from 'styled-components'; 
 
 const Wrapper = styled.div`
     display: flex;
@@ -14,7 +14,9 @@ const Wrapper = styled.div`
     }
 
     .footer-text {
-        font-size: 12px;
+        font-size: 16px;
+        letter-spacing: 1.2px;
+        color: #6459FF;
     }
     
 `
